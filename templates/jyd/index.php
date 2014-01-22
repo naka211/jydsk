@@ -82,7 +82,7 @@ $template_dir = $this->baseurl.'/templates/'.$this->template.'/';
 <script src="<?php echo $template_dir; ?>jquery/jcarousellite/jquery.carouFredSel-6.2.0-packed.js" type="text/javascript"></script> 
 <script src="<?php echo $template_dir; ?>jquery/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script> 
 <script src="<?php echo $template_dir; ?>jquery/jcarousellite/jcarousellite_1.0.1.js" type="text/javascript"></script> 
-<script src="<?php echo $template_dir; ?>jquery/validate/jquery.validate.js" type="text/javascript"></script> 
+<script src="<?php echo $template_dir; ?>jquery/validate/jquery.validate.min.js" type="text/javascript"></script> 
 <script src="<?php echo $template_dir; ?>jquery/watermark/jquery.updnWatermark.js" type="text/javascript"></script> 
 <script type="text/javascript" charset="utf-8">
   $(document).ready(function(){
@@ -157,7 +157,7 @@ $template_dir = $this->baseurl.'/templates/'.$this->template.'/';
   });
 </script> 
 <script language="javascript">
-  $(document).ready(function($) { 
+  $(document).ready(function($) {
     $.updnWatermark.attachAll();
     
     $("#emailForm").validate({
