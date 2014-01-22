@@ -1,0 +1,49 @@
+.anyclass {
+	/*width:390px !important;*/
+	width:625px !important;
+	position:relative;
+}
+/* hinh co rong ,cao,tren */
+.next, .prev {
+	position:absolute;
+	width:60px;
+	height:28px;
+	z-index:10;
+	top:5px;
+}
+
+/* show nut net */
+.next {
+	background:url(../../images/icon_left.png) no-repeat;
+	right:0px;
+}
+/* show button prev */
+.prev {
+	background:url(../../images/icon_right.png) no-repeat;
+	left:0px;
+}
+.anyclass ul {
+	margin-left:-10px !important;
+}
+.anyclass ul li {
+	height:85px !important;
+}
+.anyclass ul li img {
+	/*border:solid 6px #333;*/
+	margin-right:20px;
+}
+/* lam cho mo di hinh o 2 ben */
+.left_opaque, .right_opaque {
+	background:url(../img/background.jpg) no-repeat;
+	position:absolute;
+	width:70px;
+	height:0px;
+	z-index:9;
+}
+/* lam nhoa */
+.left_opaque {
+	left:160px;	
+}
+.right_opaque {
+	right:370px ;	
+}
