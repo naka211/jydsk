@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+
+              <field name="id" type="text" default="0" label="COM_PROFILES_FORM_LBL_PROFILE_ID"
+            readonly="true" class="readonly"
+            description="JGLOBAL_FIELD_ID_DESC" /> 
+
+       <field name="name" type="text" size="40" class="inputbox"
+        
+            label="COM_PROFILES_FORM_LBL_PROFILE_NAME"
+            description="COM_PROFILES_FORM_DESC_PROFILE_NAME" 
+        
+        
+        
+        filter="safehtml" /> 
+
+       <field name="rank" type="text" size="40" class="inputbox"
+        
+            label="COM_PROFILES_FORM_LBL_PROFILE_RANK"
+            description="COM_PROFILES_FORM_DESC_PROFILE_RANK" 
+        
+        
+        
+        filter="safehtml" /> 
+
+       <field name="email" type="text" size="40" class="inputbox"
+        
+            label="COM_PROFILES_FORM_LBL_PROFILE_EMAIL"
+            description="COM_PROFILES_FORM_DESC_PROFILE_EMAIL" 
+        
+        
+        
+        filter="safehtml" /> 
+
+       <field name="telephone" type="text" size="40" class="inputbox"
+        
+            label="COM_PROFILES_FORM_LBL_PROFILE_TELEPHONE"
+            description="COM_PROFILES_FORM_DESC_PROFILE_TELEPHONE" 
+        
+        
+        
+        filter="safehtml" /> 
+
+       <field name="image" type="media"
+                
+            label="COM_PROFILES_FORM_LBL_PROFILE_IMAGE"
+            description="COM_PROFILES_FORM_DESC_PROFILE_IMAGE" 
+                
+                
+                
+            directory="profiles" /> 
+
+       <field name="description" type="editor" buttons="true"
+        class="inputbox"
+        filter="safehtml"
+        
+        
+        
+        
+            label="COM_PROFILES_FORM_LBL_PROFILE_DESCRIPTION"
+            description="COM_PROFILES_FORM_DESC_PROFILE_DESCRIPTION"  /> 
+
+         <field
+        name="state"
+        type="list"
+        label="JSTATUS"
+        description="JFIELD_PUBLISHED_DESC"
+        class="inputbox"
+        size="1"
+        default="1">
+        <option value="1">JPUBLISHED</option>
+        <option value="0">JUNPUBLISHED</option>
+    </field>
+
+	</fieldset>
+
+</form>
