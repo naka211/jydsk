@@ -28,7 +28,7 @@ $template_dir = $this->baseurl.'/templates/'.$this->template.'/';
         <div id="page_margin_content"> 
             <!-- begin: #Header -->
             <div id="header">
-                <div class="logo"><a href=""><img src="<?php echo $template_dir; ?>img/logo.png" alt="Jydsk Lasercenter"  title="Jydsk Lasercenter" /></a>
+                <div class="logo"><a href="index.php"><img src="<?php echo $template_dir; ?>img/logo.png" alt="Jydsk Lasercenter"  title="Jydsk Lasercenter" /></a>
                     <p>{article 4}{text}{/article}</p>
                 </div>
                 <div class="float_right">

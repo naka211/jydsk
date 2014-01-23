@@ -4,7 +4,7 @@ class JConfig {
 	public $offline_message = 'This site is down for maintenance.<br /> Please check back again soon.';
 	public $display_offline_message = '1';
 	public $offline_image = '';
-	public $sitename = 'Jyd';
+	public $sitename = 'CMS-System JYDSK LASERCENTER';
 	public $editor = 'tinymce';
 	public $captcha = '0';
 	public $list_limit = '20';
@@ -43,8 +43,8 @@ class JConfig {
 	public $caching = '0';
 	public $cache_handler = 'file';
 	public $cachetime = '15';
-	public $MetaDesc = '';
-	public $MetaKeys = '';
+	public $MetaDesc = 'Skandinaviens førende indenfor laserbehandling af hudsygdomme og kosmetiske hudforandringer. Vores anvancerede laserudstyr, hudplejeprodukter og specialuddannede personale er din garanti for tryghed og kvalitet.';
+	public $MetaKeys = 'laserbehandling, laserklinik, botox, aquamid, rynker, hårfjerning, hårfjerning laser, modermærker, strækmærker, tatoveringer, karsprængninger, ar, akne, pigmentpletter, leverpletter, rosacea, øjenlåg, cool touch, fractional CO2 dot laser, IPL, PDL, Nd Yag Laser, Erbium Yag Laser';
 	public $MetaTitle = '1';
 	public $MetaAuthor = '1';
 	public $MetaVersion = '0';
