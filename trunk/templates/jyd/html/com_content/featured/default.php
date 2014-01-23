@@ -13,9 +13,11 @@ $db = JFactory::getDBO();
 $db->setQuery("SELECT * FROM #__content WHERE catid = 10 AND state = 1 ORDER BY ordering");
 $items = $db->loadObjectList();
 
-$db = JFactory::getDBO();
 $db->setQuery("SELECT * FROM #__content WHERE catid = 9 AND state = 1 ORDER BY ordering");
 $items1 = $db->loadObjectList();
+
+$db->setQuery("SELECT * FROM #__content WHERE catid = 11 AND state = 1 ORDER BY ordering LIMIT 0,18");
+$gallery_items = $db->loadObjectList();
 
 ?>
 <div class="col1 p15r">
@@ -117,30 +119,14 @@ $items1 = $db->loadObjectList();
         <div class="icon_1"><a href="javascript:;" class="next2"><img src="<?php echo $template_dir; ?>img/back.png" alt="" /></a></div>
         <div class="w558 float_left m30t" id='mycarousel2' style="height:80px; padding-left:12px">
             <ul class="float_left">
+                <?php foreach($gallery_items as $item){
+                    $tmp = json_decode($item->images);
+                    $image = $tmp->image_intro;
+                ?>
                 <li class="w120 float_left center" style="width:137px; margin-left:0px;">
-                    <div class="bg_img"><a href="/Galleri.html"><img src="<?php echo $template_dir; ?>img/metteefter1.jpg" alt="Madonna Eyelift - efter foto" title="Madonna Eyelift - efter foto" width="116" height="68" /></a></div>
+                    <div class="bg_img"><a href="galleri.html"><img src="<?php echo JURI::base().'thumbnail/timthumb.php?src='.JURI::base().$image.'&q=100&w=116&h=68'; ?>" ></a></div>
                 </li>
-                <li class="w120 float_left center" style="width:137px; margin-left:0px;">
-                    <div class="bg_img"><a href="/Galleri.html"><img src="<?php echo $template_dir; ?>img/metteefter1.jpg" alt="Madonna Eyelift - før foto" title="Madonna Eyelift - før foto" width="116" height="68" /></a></div>
-                </li>
-                <li class="w120 float_left center" style="width:137px; margin-left:0px;">
-                    <div class="bg_img"><a href="/Galleri.html"><img src="<?php echo $template_dir; ?>img/metteefter1.jpg" alt="Smartxide CO2 DOT-laser" title="Smartxide CO2 DOT-laser" width="116" height="68" /></a></div>
-                </li>
-                <li class="w120 float_left center" style="width:137px; margin-left:0px;">
-                    <div class="bg_img"><a href="/Galleri.html"><img src="<?php echo $template_dir; ?>img/metteefter1.jpg" alt="Smartxide CO2 DOT-laser" title="Smartxide CO2 DOT-laser" width="116" height="68" /></a></div>
-                </li>
-                <li class="w120 float_left center" style="width:137px; margin-left:0px;">
-                    <div class="bg_img"><a href="/Galleri.html"><img src="<?php echo $template_dir; ?>img/metteefter1.jpg" alt="Madonna Eyelift" title="Madonna Eyelift" width="116" height="68" /></a></div>
-                </li>
-                <li class="w120 float_left center" style="width:137px; margin-left:0px;">
-                    <div class="bg_img"><a href="/Galleri.html"><img src="<?php echo $template_dir; ?>img/metteefter1.jpg" alt="Madonna Eyelift" title="Madonna Eyelift" width="116" height="68" /></a></div>
-                </li>
-                <li class="w120 float_left center" style="width:137px; margin-left:0px;">
-                    <div class="bg_img"><a href="/Galleri.html"><img src="<?php echo $template_dir; ?>img/metteefter1.jpg" alt="Kombinationsbehandling" title="Kombinationsbehandling" width="116" height="68" /></a></div>
-                </li>
-                <li class="w120 float_left center" style="width:137px; margin-left:0px;">
-                    <div class="bg_img"><a href="/Galleri.html"><img src="<?php echo $template_dir; ?>img/metteefter1.jpg" alt="Kombinationsbehandling" title="Kombinationsbehandling" width="116" height="68" /></a></div>
-                </li>
+                <?php }?>
             </ul>
         </div>
         <div class="icon_1" style="margin-left:-3px"><a href="javascript:;" class="prev2"><img src="<?php echo $template_dir; ?>img/next.png" alt="" /></a></div>

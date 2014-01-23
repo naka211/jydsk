@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Medarbejdere" option="Medarbejdere">
+		<help
+			key = "JHELP_MENUS_MENU_ITEM_ARTICLE_SINGLE_ARTICLE"
+		/>
+		<message>
+			Medarbejdere
+		</message>
+	</layout>
+
+	
+</metadata>

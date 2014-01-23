@@ -29,7 +29,7 @@ class ContentViewArticle extends JViewLegacy
 	protected $user;
 
 	public function display($tpl = null)
-	{
+	{ 
 		$app		= JFactory::getApplication();
 		$user		= JFactory::getUser();
 		$dispatcher	= JEventDispatcher::getInstance();
@@ -71,7 +71,7 @@ class ContentViewArticle extends JViewLegacy
 		$temp = clone ($this->params);
 
 		// Check to see which parameters should take priority
-		if ($active)
+		/*if ($active)
 		{
 			$currentLink = $active->link;
 
@@ -120,7 +120,7 @@ class ContentViewArticle extends JViewLegacy
 			{
 				$this->setLayout($layout);
 			}
-		}
+		}*/
 
 		$offset = $this->state->get('list.offset');
 

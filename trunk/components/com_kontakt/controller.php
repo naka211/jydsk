@@ -4,7 +4,6 @@ jimport('joomla.application.component.controller');
 
 class KontaktController extends JControllerLegacy {
     function frontpage_submit(){
-        die('dasdsa');
 		// Check for request forgeries
 		JRequest::checkToken() or jexit( 'Invalid Token' );
 		
