@@ -54,10 +54,11 @@ $gallery_items = $db->loadObjectList();
             <table summary="Behandlinger" width="100%" border="0" cellspacing="0" cellpadding="0">
             <?php
             for($i=0; $i<count($items1); $i+=2){
-                $item = $items1[$i];
-                $link = ('index.php?option=com_content&view=article&layout=behandlinger&id='.$item->id);
-                $item2 = @$items1[$i+1];
-                $link2 = $item2?('index.php?option=com_content&view=article&layout=behandlinger&id='.$item2->id):'#';
+                $item = $items1[$i];$itemid1 = $item->id + 111;
+                $link = ('index.php?option=com_content&view=article&layout=behandlinger&id='.$item->id.'&Itemid='.$itemid1);
+                
+                $item2 = @$items1[$i+1];$itemid2 = $item2->id + 111;
+                $link2 = $item2?('index.php?option=com_content&view=article&layout=behandlinger&id='.$item2->id.'&Itemid='.$itemid2):'#';
             ?>
                 <tr>
                     <td width="51%" height="27"><img src="<?php echo $template_dir; ?>img/icon1.jpg" /><a title="<?php echo $item->title; ?>" href="<?php echo $link;?>"><?php echo $item->title; ?></a></td>
@@ -124,7 +125,7 @@ $gallery_items = $db->loadObjectList();
                     $image = $tmp->image_intro;
                 ?>
                 <li class="w120 float_left center" style="width:137px; margin-left:0px;">
-                    <div class="bg_img"><a href="galleri.html"><img src="<?php echo JURI::base().'thumbnail/timthumb.php?src='.JURI::base().$image.'&q=100&w=116&h=68'; ?>" ></a></div>
+                    <div class="bg_img"><a href="index.php?option=com_content&view=category&layout=blog&id=11&Itemid=117"><img src="<?php echo JURI::base().'thumbnail/timthumb.php?src='.JURI::base().$image.'&q=100&w=116&h=68'; ?>" ></a></div>
                 </li>
                 <?php }?>
             </ul>
