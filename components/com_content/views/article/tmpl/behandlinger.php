@@ -24,7 +24,8 @@ $items = $db->loadObjectList();
 		for($i=0; $i<count($items); $i++)
 		{
 			$row = $items[$i];
-			$link = JRoute::_('index.php?option=com_content&view=article&layout=behandlinger&id='.$row->id);
+            $itemid = $row->id + 111;
+			$link = JRoute::_('index.php?option=com_content&view=article&layout=behandlinger&id='.$row->id.'&Itemid='.$itemid);
 		?>
 		<li><a title="<?php echo $row->title; ?>" href="<?php echo $link;?>"<?php if($id == $row->id) echo ' class="current"'; ?>><?php echo $row->title; ?></a></li>
 		<?php

@@ -42,7 +42,7 @@ $template_dir = $this->baseurl.'/templates/'.$this->template.'/';
             <div id="main">
                 <div class="w290 float_left box_welcome">
                     <div class="p20t p15l"><img src="<?php echo $template_dir; ?>img/welcome.png"  alt="Jydsk Lasercenter" title="Jydsk Lasercenter" /></div>
-                    <p class="p40t p30l p15r w_color"><?php echo strip_tags(substr($item->introtext, 0, 300));?>... <img src="<?php echo $template_dir; ?>img/icon.png" alt="" /> <span class="blu"><a href="<?php echo JURI::base().'index.php?option=com_content&view=article&id=3'?>">mere</a></span><br />
+                    <p class="p40t p30l p15r w_color"><?php echo strip_tags(substr($item->introtext, 0, 300));?>... <img src="<?php echo $template_dir; ?>img/icon.png" alt="" /> <span class="blu"><a href="index.php?option=com_content&view=article&id=3&Itemid=118">mere</a></span><br />
                         <br />
                         <span class=" p10t"><a href="kontakt.php"><img border="0" src="<?php echo $template_dir; ?>img/bt_osher.png" onmouseout="tonus(false)" onmouseover="tonus(true)" /></a></span></p>
                     <div id="tooltip" class="box_map"><img src="<?php echo $template_dir; ?>img/map.jpg" title="Jydsk Lasercenter-Kontakt" alt="Jydsk Lasercenter-Kontakt"/></div>
