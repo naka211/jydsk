@@ -8,12 +8,7 @@ $item=$db->loadObject();
 $template_dir = $this->baseurl.'/templates/'.$this->template.'/';
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="da-dk" lang="da-dk" dir="ltr" >
 <head>
 <jdoc:include type="head" />
 <link href="<?php echo $template_dir; ?>css/style.css" rel="stylesheet" type="text/css" />
@@ -47,11 +42,13 @@ $template_dir = $this->baseurl.'/templates/'.$this->template.'/';
                         <span class=" p10t"><a href="kontakt.php"><img border="0" src="<?php echo $template_dir; ?>img/bt_osher.png" onmouseout="tonus(false)" onmouseover="tonus(true)" /></a></span></p>
                     <div id="tooltip" class="box_map"><img src="<?php echo $template_dir; ?>img/map.jpg" title="Jydsk Lasercenter-Kontakt" alt="Jydsk Lasercenter-Kontakt"/></div>
                 </div>
-                <div id="foo3" class="banner">
-                    <div class="slide"><img src="<?php echo $template_dir; ?>img/1.png" alt="" /></div>
-                    <div class="slide"><img src="<?php echo $template_dir; ?>img/2.png" alt="" /></div>
-                    <div class="slide"><img src="<?php echo $template_dir; ?>img/3.png" alt="" /></div>
-                    <div class="slide"><img src="<?php echo $template_dir; ?>img/4.png" alt="" /></div>
+                <div class="html_carousel">
+                    <div id="foo3" class="banner">
+                        <div class="slide"><img src="<?php echo $template_dir; ?>img/1.png" alt="" /></div>
+                        <div class="slide"><img src="<?php echo $template_dir; ?>img/2.png" alt="" /></div>
+                        <div class="slide"><img src="<?php echo $template_dir; ?>img/3.png" alt="" /></div>
+                        <div class="slide"><img src="<?php echo $template_dir; ?>img/4.png" alt="" /></div>
+                    </div>
                 </div>
                 <div class="clear"></div>
                 <div class="temp1 p10t">

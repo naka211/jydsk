@@ -16,6 +16,9 @@ $items = $db->loadObjectList();
 $db->setQuery("SELECT * FROM #__content WHERE catid = 9 AND state = 1 ORDER BY ordering");
 $items1 = $db->loadObjectList();
 
+$db->setQuery("SELECT * FROM #__content WHERE catid = 14 AND state = 1 ORDER BY ordering");
+$news_items = $db->loadObjectList();
+
 $db->setQuery("SELECT * FROM #__content WHERE catid = 11 AND state = 1 ORDER BY ordering LIMIT 0,18");
 $gallery_items = $db->loadObjectList();
 
@@ -35,7 +38,7 @@ $gallery_items = $db->loadObjectList();
                 <li style="width:110px; margin-left:0px;">
                     <div class="bg_img1"><a href="<?php echo $url;?>" target="_blank"><img src="<?php echo JURI::base().'thumbnail/timthumb.php?src='.JURI::base().$image.'&q=100&w=90&h=56'; ?>" ></a></div>
                     <div style=" text-align:center"><a title="<?php echo $item->title;?>" href="<?php echo $url;?>" target="_blank"><?php echo $item->title;?></a><br />
-                        <span class="orange"><?php echo $item->introtext; ?></div>
+                        <span><?php echo $item->introtext; ?></div>
                 </li>
                 <?php }?>
             </ul>
@@ -135,9 +138,12 @@ $gallery_items = $db->loadObjectList();
     </div>
     <div class="w620 float_left" style="padding-top:30px;">
         <div style="margin: 0; padding: 0 15px 0 15px; width:290px; float:left;">
-            <div class="title_1"><img src="<?php echo $template_dir; ?>img/icon_3.png" width="22" height="22" style=" float:left; margin-right:10px;"/> <a href="/Table/Nyheder/">Nyheder </a></div>
+            <div class="title_1"><img src="<?php echo $template_dir; ?>img/icon_3.png" width="22" height="22" style=" float:left; margin-right:10px;"/> <a href="index.php?option=com_content&view=category&id=14&Itemid=131&layout=news">Nyheder</a></div>
             <div style="margin-top: 10px;" class="text_news">
                 <ul>
+                    <?php foreach($news_items as $item){?>
+                    <li><a href="index.php?option=com_content&view=article&id=<?php echo $item->id?>" title="<?php echo $item->title;?>"><?php echo $item->title;?></a></li>
+                    <?php }?>
                 </ul>
             </div>
         </div>

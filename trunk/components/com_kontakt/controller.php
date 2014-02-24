@@ -7,7 +7,7 @@ class KontaktController extends JControllerLegacy {
 		// Check for request forgeries
 		JRequest::checkToken() or jexit( 'Invalid Token' );
 		
-		$db			= & JFactory::getDBO();
+		$db			= JFactory::getDBO();
 		
 		$name		= JRequest::getVar( 'name',			'',			'post' );
 		$email		= JRequest::getVar( 'email',			'',			'post' );
@@ -19,8 +19,8 @@ class KontaktController extends JControllerLegacy {
 		
 		jimport('joomla.mail.helper');
 		$mail = JFactory::getMailer();
-		$config =& JFactory::getConfig();
-		$mail->addRecipient( $config->getValue('config.mailfrom') );
+		$config = JFactory::getConfig();
+		$mail->addRecipient( $config->get('mailfrom') );
 		$mail->setSender( array( $email, $name ) );
 		$mail->setSubject( $subject );
 		$mail->setBody( $message );
@@ -42,7 +42,7 @@ class KontaktController extends JControllerLegacy {
         $body1 .= "www.hudlaegenscremeshop.dk<br />";
         $body1 .= '<a href="http://www.facebook.com/pages/Jydsk-Lasercenter/203270099703773"><img src="http://jydsklasercenter.dk/images/face.png" /></a>';
         
-		$mail1 =& JFactory::getMailer();
+		$mail1 = JFactory::getMailer();
         $mail1->isHTML(true);
         $mail1->Encoding = 'base64';
 		$mail1->addRecipient($email);
@@ -51,12 +51,12 @@ class KontaktController extends JControllerLegacy {
 		$mail1->setBody( $body1 );
 		$sent = $mail1->Send();
 
-		$msg = JText::_( 'Tak for din henvendelse! Vi vil kontakte dig hurtigst muligt' );
+		/*$msg = JText::_( 'Tak for din henvendelse! Vi vil kontakte dig hurtigst muligt' );
 
 		global $mainframe, $option;
-		$mainframe->setUserState( $option.'msg', $msg  );
+		$mainframe->setUserState( $option.'msg', $msg  );*/
 
-		$link = JRoute::_('index.php?option=com_kontakt&view=index&layout=response');
+		$link = 'index.php?option=com_content&view=article&layout=response&id=70';
 		$this->setRedirect($link, $msg);
 	}
 	
@@ -77,11 +77,11 @@ class KontaktController extends JControllerLegacy {
 		$body = "Hej Admin!\n\r\n\rDer er en forespørgsel fra kontakt-formularen fra jydsklasercenter.dk\nNavn: $name\nFirma: $company\nEmail: $email\nEmne: $subject_2\nBesked: $text\n\r\n\rMed venlig hilsen,\nJydsk Lasercenter";
 		
 		jimport('joomla.mail.helper');
-		$mail =& JFactory::getMailer();
+		$mail = JFactory::getMailer();
 		
-		$config =& JFactory::getConfig();
+		$config = JFactory::getConfig();
 		
-		$mail->addRecipient( $config->getValue('config.mailfrom') );
+		$mail->addRecipient( $config->get('mailfrom') );
 		$mail->setSender( array( $email, $name ) );
 		$mail->setSubject( $subject );
 		$mail->setBody( $body );
@@ -103,7 +103,7 @@ class KontaktController extends JControllerLegacy {
         $body1 .= "www.hudlaegenscremeshop.dk<br />";
         $body1 .= '<a href="http://www.facebook.com/pages/Jydsk-Lasercenter/203270099703773"><img src="http://jydsklasercenter.dk/images/face.png" /></a>';
         
-		$mail1 =& JFactory::getMailer();
+		$mail1 = JFactory::getMailer();
         $mail1->isHTML(true);
         $mail1->Encoding = 'base64';
 		$mail1->addRecipient($email);
@@ -114,12 +114,12 @@ class KontaktController extends JControllerLegacy {
         
 		
 		// message
-		$msg = JText::_( 'Tak for din henvendelse! Vi vil kontakte dig hurtigst muligt' );
+		/*$msg = JText::_( 'Tak for din henvendelse! Vi vil kontakte dig hurtigst muligt' );
 
 		global $mainframe, $option;
-		$mainframe->setUserState( $option.'msg', $msg  );
+		$mainframe->setUserState( $option.'msg', $msg  );*/
 
-		$link = JRoute::_('index.php?option=com_kontakt&view=index&layout=response');
+		$link = 'index.php?option=com_content&view=article&layout=response&id=70';
 		$this->setRedirect($link, $msg);
 	}
 
@@ -131,16 +131,16 @@ class KontaktController extends JControllerLegacy {
 		
 		$email = $_POST['subscriber'];
 		
-		$db = &JFactory::getDBO();
+		$db = JFactory::getDBO();
 		
 		$sql = "SELECT * FROM #__acajoom_subscribers WHERE `email`='".$email."';";
 		$db->setQuery($sql);
 		if (!$db->loadResult())
 		{						
-			$date =& JFactory::getDate();
+			$date = JFactory::getDate();
 			$name = $email;
 			$list_id = 1;
-			$user =& JFactory::getUser();
+			$user = JFactory::getUser();
 			$user_id = $user->get('id');
 			
 			$sql = "INSERT INTO `#__acajoom_subscribers`(`id`,`user_id`,`name`,`email`,`receive_html`,`confirmed`,`blacklist`,`timezone`,`language_iso`,`subscribe_date`,`params`) VALUES ( NULL,'".$user_id."','".$name."','".$email."','1','0','0','00:00:00','eng','".$date->toMySQL()."',NULL);";
@@ -168,7 +168,7 @@ class KontaktController extends JControllerLegacy {
 		JRequest::checkToken() or jexit( 'Invalid Token' );
 		
 		$email = $_POST['subscriber'];
-		$db = &JFactory::getDBO();
+		$db = JFactory::getDBO();
 		
 		$sql = "SELECT id FROM #__acajoom_subscribers WHERE `email`='".$email."';";
 		$db->setQuery($sql);
