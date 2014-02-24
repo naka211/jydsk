@@ -1,15 +1,14 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access'); ?>
 <script src="<?php echo $this->template_dir; ?>Scripts/mootools1.2b.js" language="javascript"></script>
-<div class="title_4"><?php echo $this->item->category_title?$this->item->category_title:'Information'; ?></div>
 <div class=" p10t">
   <div class="bol_bottom">
     <div id="content1" class="w898" style="height: auto !important;"> 
     <!--<?php if($this->article->article_image) { ?><img src="<?php echo JURI::base().$this->article->article_image; ?>" width="206" style=" float:left; margin:0 10px 10px 0;"/><?php } ?>-->
-      <h5><?php echo $this->item->title; ?></h5>
-      <span class="gry_color"><?php echo date('d-m-Y', strtotime($this->item->publish_up)) ?></span><br />
-      <?php echo $this->item->text; ?> 
-      </div>
+        <?php echo $this->item->text; ?>
+       
+        <br />
+    <a href="<?php echo JURI::base(); ?>"><img border="0" src="templates/jyd/mwc/danish/btn_1.png" /></a></div>
     <!--div id="scrollbar1" class="scrollbar-vert">
       <div id="handle1" class="handle-vert"></div>
     </div-->
@@ -64,6 +63,6 @@ defined('_JEXEC') or die('Restricted access'); ?>
             /* ]]> */
         </script>
   </div>
-  <div class="p10t"><a href="javascript:history.go(-1)"><img border="0" src="templates/jyd/img/bt_tibage.jpg" /></a></div>
+  <!--<div class="p10t"><a href="javascript:history.go(-1)"><img border="0" src="templates/jyd/img/bt_tibage.jpg" /></a></div>-->
 </div>
 </div>

@@ -1,8 +1,10 @@
 <?php // no direct access
 defined('_JEXEC') or die('Restricted access');
+$uri = JFactory::getURI();
+$action = $uri->toString();
 ?>
-<script src="templates/jyd/jquery/jquery.js" type="text/javascript"></script>
-<script src="templates/jyd/jquery/validate/jquery.validate.js" type="text/javascript"></script>
+<script src="templates/jyd/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="templates/jyd/jquery/validate/jquery.validate.min.js" type="text/javascript"></script>
 <div class="title_4">Kontakt</div>
 <div class="m10l p10t">{article 26}{text}{/article}<br />
   <br />
@@ -12,7 +14,7 @@ defined('_JEXEC') or die('Restricted access');
   </div>
   <div class="float_left p30l">
     <div class="input_form">
-        <form action="<?php echo $this->action ?>" method="post" name="kontaktForm" id="kontaktForm">
+        <form action="<?php echo $action ?>" method="post" name="kontaktForm" id="kontaktForm">
         <label class="w100">Kontaktperson</label>
         <input name="name" id="name" type="text" value="" class="w280" />
         <br />
@@ -32,7 +34,7 @@ defined('_JEXEC') or die('Restricted access');
         <label class="w100">&nbsp;</label>
         <?php $string = md5(microtime() * time());$text = substr($string, 0, 5);?>
         <input type="text" name="capcha1" id="capcha1" style="display:none;" value="<?php echo $text;?>"/>
-        <input type="text" name="capcha2" id="capcha2" value="Venligst indtast koden" onclick="this.value=''"/>
+        <input type="text" name="capcha2" id="capcha2" onclick="this.value=''"/>
         <img style="vertical-align: top;" width="55" height="23" src="index.php?option=com_captcha&text=<?php echo $text; ?>" alt="<?php echo $text; ?>" />
         <br />
         
@@ -51,10 +53,6 @@ defined('_JEXEC') or die('Restricted access');
 </div>
 
 <script language="javascript">
-<?php if($this->error) : ?>
-<?php echo 'alert("'.$this->error.'");'; ?>
-<?php endif; ?>
-
 	$(document).ready(function($) {	
 		$("#kontaktForm").validate({
 			errorPlacement: function(error, element) {			

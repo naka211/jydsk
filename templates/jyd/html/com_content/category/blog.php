@@ -21,7 +21,7 @@ $this->template_dir = 'templates/jyd/';
       <div class="clear_left"></div>
     </div>
   </div>
-  <div class="p10t" style="text-align:center"><? echo $this->pagination->getPagesLinks(); ?></div>
+  <div class="p10t" style="text-align:center"><?php echo $this->pagination->getPagesLinks(); ?></div>
 </div>
 </div>
 <script type="text/javascript">

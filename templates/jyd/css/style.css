@@ -51,3 +51,6 @@ ul.gallery li.mr0 {margin-right: 0;}
 .pp_nav, .pp_social, .pp_gallery {display: none !important;}
 ul#menu li ul li {display: block !important;}
 .box_be table tr td {border-bottom: 1px dotted #CCCCCC !important;}
+#foo3 div {height: 293px; }
+#foo3{overflow:hidden;}
+.html_carousel {width: 630px; height: 293px; float: left;}
