@@ -5,6 +5,10 @@ $db = JFactory::getDBO();
 $db->setQuery("SELECT * FROM #__content WHERE id=3");
 $item=$db->loadObject();
 
+$db = JFactory::getDBO();
+$db->setQuery("SELECT * FROM #__content WHERE catid = 12 AND state = 1 ORDER BY ordering");
+$images = $db->loadObjectList();
+
 $template_dir = $this->baseurl.'/templates/'.$this->template.'/';
 ?>
 <!DOCTYPE html>
@@ -42,13 +46,13 @@ $template_dir = $this->baseurl.'/templates/'.$this->template.'/';
                         <span class=" p10t"><a href="kontakt.php"><img border="0" src="<?php echo $template_dir; ?>img/bt_osher.png" onmouseout="tonus(false)" onmouseover="tonus(true)" /></a></span></p>
                     <div id="tooltip" class="box_map"><img src="<?php echo $template_dir; ?>img/map.jpg" title="Jydsk Lasercenter-Kontakt" alt="Jydsk Lasercenter-Kontakt"/></div>
                 </div>
-                <div class="html_carousel">
-                    <div id="foo3" class="banner">
-                        <div class="slide"><img src="<?php echo $template_dir; ?>img/1.png" alt="" /></div>
-                        <div class="slide"><img src="<?php echo $template_dir; ?>img/2.png" alt="" /></div>
-                        <div class="slide"><img src="<?php echo $template_dir; ?>img/3.png" alt="" /></div>
-                        <div class="slide"><img src="<?php echo $template_dir; ?>img/4.png" alt="" /></div>
-                    </div>
+                <div id="foo3" class="banner">
+                	<?php foreach($images as $image){
+						$tmp = json_decode($image->images);
+        				$image_link = $tmp->image_intro;
+					?>
+                    <div class="slide"><img src="<?php echo $image_link; ?>" alt="" /></div>
+                    <?php }?>
                 </div>
                 <div class="clear"></div>
                 <div class="temp1 p10t">
