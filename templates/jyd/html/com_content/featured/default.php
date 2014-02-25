@@ -38,7 +38,7 @@ $gallery_items = $db->loadObjectList();
                 <li style="width:110px; margin-left:0px;">
                     <div class="bg_img1"><a href="<?php echo $url;?>" target="_blank"><img src="<?php echo JURI::base().'thumbnail/timthumb.php?src='.JURI::base().$image.'&q=100&w=90&h=56'; ?>" ></a></div>
                     <div style=" text-align:center"><a title="<?php echo $item->title;?>" href="<?php echo $url;?>" target="_blank"><?php echo $item->title;?></a><br />
-                        <span><?php echo $item->introtext; ?></div>
+                        <span style="color:#000"><?php echo $item->introtext; ?></div>
                 </li>
                 <?php }?>
             </ul>
